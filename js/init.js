@@ -9,8 +9,22 @@ console.log(searched)
         let movie = moviesInfoArray[i];
         if (movie.title.toLowerCase().includes(searched.toLowerCase()))
             htmlContentToAppend += `
-            <li class="list-group-item text-light bg-dark d-block">${movie.title}  ${showStars(movie.vote_average/2)}
-            <p>${movie.tagline}</p></li>
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+            <li class="list-group-item text-light bg-dark d-block">${movie.title} 
+            ${showStars(movie.vote_average/2)}
+            <p>${movie.tagline}</p></li></button>
+            
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasTopLabel${i}">${movie.title} </h5>^
+                <br>
+                <P>${movie.overview}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                ...
+              </div>
+            </div>
             `
 
         }
@@ -18,6 +32,22 @@ console.log(searched)
         document.getElementById("lista").innerHTML = htmlContentToAppend;
         console.log(document.getElementById("lista"))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // El viejo y qeuerido getJSONData
 let getJSONData = function(url){

@@ -22,10 +22,20 @@ console.log(searched)
               <div class="offcanvas-body">
               ${movie.overview}
               </div>
-            </div>
+              <div class="offcanvas-body">
+            
             `
 
+          let genresArray = movie.genres
+          for(let j=0; j <genresArray.length; j++){
+            let genre = genresArray[j];
+            htmlContentToAppend += `${genre.name}
+            `} 
+          htmlContentToAppend +=`</div></div>`
         }
+
+        
+
              
         document.getElementById("lista").innerHTML = htmlContentToAppend;
 }

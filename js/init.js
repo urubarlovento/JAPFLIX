@@ -9,12 +9,12 @@ console.log(searched)
         let movie = moviesInfoArray[i];
         if (movie.title.toLowerCase().includes(searched.toLowerCase()))
             htmlContentToAppend += `
-            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop${i}" aria-controls="offcanvasTop${i}">
             <li class="list-group-item text-light bg-dark d-block">${movie.title} 
             ${showStars(movie.vote_average/2)}
             <p>${movie.tagline}</p></li></button>
             
-            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop${i}" aria-labelledby="offcanvasTopLabel${i}">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasTopLabel${i}">${movie.title} </h5>^
                 <br>

@@ -6,7 +6,7 @@ let searched = document.getElementById("inputBuscar").value
   let htmlContentToAppend = "";
     for(let i = 0; i < moviesInfoArray.length; i++){
         let movie = moviesInfoArray[i];
-        if (movie.title.toLowerCase().includes(searched.toLowerCase()))
+        if (movie.title.toLowerCase().includes(searched.toLowerCase())){
             htmlContentToAppend += `
             <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop${i}" aria-controls="offcanvasTop${i}">
             <li class="list-group-item text-light bg-dark d-block">${movie.title} 
@@ -40,12 +40,12 @@ let searched = document.getElementById("inputBuscar").value
             <li><a class="dropdown-item" href="#">Revenue:${movie.revenue}</a></li>
           </ul>
         </div>`
-
+        }
           htmlContentToAppend +=`</div>`
         }    
         document.getElementById("lista").innerHTML = htmlContentToAppend;
-}
 
+}
 
 
 

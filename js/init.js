@@ -30,7 +30,6 @@ console.log(searched)
         }
              
         document.getElementById("lista").innerHTML = htmlContentToAppend;
-        console.log(document.getElementById("lista"))
 }
 
 

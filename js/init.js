@@ -3,7 +3,6 @@
 let moviesList = ""
 let showMovies = function(){
 let searched = document.getElementById("inputBuscar").value
-console.log(searched)
   let htmlContentToAppend = "";
     for(let i = 0; i < moviesInfoArray.length; i++){
         let movie = moviesInfoArray[i];
@@ -22,21 +21,15 @@ console.log(searched)
               <div class="offcanvas-body">
               ${movie.overview}
               </div>
-              <div class="offcanvas-body">
-            
+              <div class="offcanvas-body">   
             `
-
           let genresArray = movie.genres
           for(let j=0; j <genresArray.length; j++){
             let genre = genresArray[j];
             htmlContentToAppend += `${genre.name}
             `} 
           htmlContentToAppend +=`</div></div>`
-        }
-
-        
-
-             
+        }    
         document.getElementById("lista").innerHTML = htmlContentToAppend;
 }
 

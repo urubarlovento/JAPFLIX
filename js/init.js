@@ -20,7 +20,7 @@ let searched = document.getElementById("inputBuscar").value
               </div>
               <div class="offcanvas-body">
               ${movie.overview}
-              </div>
+              </div><hr>
               <div class="offcanvas-body">   
             `
           let genresArray = movie.genres
@@ -28,7 +28,20 @@ let searched = document.getElementById("inputBuscar").value
             let genre = genresArray[j];
             htmlContentToAppend += `${genre.name}
             `} 
-          htmlContentToAppend +=`</div></div>`
+          htmlContentToAppend +=`</div>`
+          htmlContentToAppend +=`<div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Year:   ${movie.release_date}</a></li>
+            <li><a class="dropdown-item" href="#">runtime:${movie.runtime}</a></li>
+            <li><a class="dropdown-item" href="#">Budget: ${movie.budget}</a></li>
+            <li><a class="dropdown-item" href="#">Revenue:${movie.revenue}</a></li>
+          </ul>
+        </div>`
+
+          htmlContentToAppend +=`</div>`
         }    
         document.getElementById("lista").innerHTML = htmlContentToAppend;
 }

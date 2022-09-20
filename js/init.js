@@ -27,7 +27,7 @@ let searched = document.getElementById("inputBuscar").value
             let genre = genresArray[j];
             htmlContentToAppend += `${genre.name}`} 
           htmlContentToAppend +=`</div>`
-          htmlContentToAppend +=`<div class="dropdown">
+          htmlContentToAppend +=`<div class="dropdown col align-self-end">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             More
           </button>

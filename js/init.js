@@ -21,13 +21,11 @@ let searched = document.getElementById("inputBuscar").value
               <div class="offcanvas-body">
               ${movie.overview}
               </div><hr>
-              <div class="offcanvas-body">   
-            `
+              <div class="offcanvas-body">`
           let genresArray = movie.genres
           for(let j=0; j <genresArray.length; j++){
             let genre = genresArray[j];
-            htmlContentToAppend += `${genre.name}
-            `} 
+            htmlContentToAppend += `${genre.name}`} 
           htmlContentToAppend +=`</div>`
           htmlContentToAppend +=`<div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,13 +37,9 @@ let searched = document.getElementById("inputBuscar").value
             <li><a class="dropdown-item" href="#">Budget: ${movie.budget}</a></li>
             <li><a class="dropdown-item" href="#">Revenue:${movie.revenue}</a></li>
           </ul>
-        </div>`
-        }
-          htmlContentToAppend +=`</div>`
-        }    
-        document.getElementById("lista").innerHTML = htmlContentToAppend;
-
-}
+        </div>`}
+          htmlContentToAppend +=`</div>`}    
+        document.getElementById("lista").innerHTML = htmlContentToAppend;}
 
 
 

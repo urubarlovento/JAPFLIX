@@ -23,16 +23,19 @@ let searched = document.getElementById("inputBuscar").value
               </div><hr>
               <div class="offcanvas-body">`
           let genresArray = movie.genres
+          let  mDate = new Date(movie.release_date)
+          let year = String(mDate.getFullYear());
           for(let j=0; j <genresArray.length; j++){
             let genre = genresArray[j];
             htmlContentToAppend += `${genre.name}`} 
           htmlContentToAppend +=`</div>`
+          
           htmlContentToAppend +=`<div class="dropdown col align-self-end">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             More
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Year:   ${movie.release_date}</a></li>
+            <li><a class="dropdown-item" href="#">Year:   ${year}</a></li>
             <li><a class="dropdown-item" href="#">runtime:${movie.runtime}</a></li>
             <li><a class="dropdown-item" href="#">Budget: ${movie.budget}</a></li>
             <li><a class="dropdown-item" href="#">Revenue:${movie.revenue}</a></li>
@@ -56,7 +59,7 @@ let searched = document.getElementById("inputBuscar").value
 
 
 
-// El viejo y qeuerido getJSONData
+// El viejo y querido getJSONData
 let getJSONData = function(url){
     let result = {};
     return fetch(url)

@@ -35,10 +35,10 @@ let searched = document.getElementById("inputBuscar").value
             More
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Year:   ${year}</a></li>
-            <li><a class="dropdown-item" href="#">runtime:${movie.runtime}</a></li>
-            <li><a class="dropdown-item" href="#">Budget: ${movie.budget}</a></li>
-            <li><a class="dropdown-item" href="#">Revenue:${movie.revenue}</a></li>
+            <li><p >Year:   ${year}</p></li>
+            <li><p >runtime:${movie.runtime} mins</p></li>
+            <li><p >Budget: ${movie.budget}</p></li>
+            <li><p >Revenue:${movie.revenue}</p></li>
           </ul>
         </div>`}
           htmlContentToAppend +=`</div>`}    
